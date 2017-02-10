@@ -1,6 +1,72 @@
-<div>
-  <p><span>
-    test
-    </span></p>
+<div class="calculator">
+  <form class="form-horizontal" #form="ngForm" (ngSubmit)="calculate()">
+    <div class="form-group">
+      <label for="baseData" class="col-sm-2 control-label">Base Data<span class="note">(comma delimited)</span></label>
+      <div class="col-sm-10">
+        <textarea class="form-control" name="baseData" rows="3" [(ngModel)]="baseData" placeholder="Base Data"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="changeData" class="col-sm-2 control-label">Change Data<span class="note">(comma delimited)</span></label>
+      <div class="col-sm-10">
+        <textarea class="form-control" name="changeData" rows="3" [(ngModel)]="changeData" placeholder="Change Data"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="radio-inline ">
+          <label>
+          <input type="radio" name="optionsRadios" [checked]="true" [(ngModel)]="itemMatcher" id="optionsRadios1" value="ignore" checked>
+          Equal items are ignored
+        </label>
+        </div>
+        <div class="radio-inline">
+          <label>
+          <input type="radio" name="optionsRadios" [(ngModel)]="itemMatcher" id="optionsRadios2" value="fail">
+          Equal items are a failure
+        </label>
+        </div>
+        <div class="radio-inline">
+          <label>
+          <input type="radio" name="optionsRadios" [(ngModel)]="itemMatcher" id="optionsRadios2" value="success">
+          Equal items are a succes
+        </label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="error">
+      <div class="form-group">
+        <h4 class="error">{{error}}</h4>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn btn-primary" type="submit">Calculate</button>
+        <button class="btn btn-default" (click)="clearForm()">Clear Form</button>
+      </div>
+    </div>
+  </form>
 
+  <div *ngIf="result" class="row results">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sign Test Results</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-sm-7 offset">
+            <h4>Probability of 'no effect' is {{result.noEffect}}</h4>
+            <h4>Probability of 'an effect' is {{result.hasEffect}}</h4>
+          </div>
+          <div class="col-sm-5">
+            <canvas baseChart [labels]="labels" 
+            [data]="data" 
+            [chartType]="type"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 </div>

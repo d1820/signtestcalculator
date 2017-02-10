@@ -1,0 +1,12 @@
+.header h1, h3, p{
+  text-align: center;
+}
+.header h3{
+  margin-bottom: 0;
+}
+.header h3{
+  margin-top: 5px;
+}
+.header{
+  padding-bottom: 30px;
+}

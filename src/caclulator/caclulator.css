@@ -1,0 +1,15 @@
+.calculator .note {
+  display: block;
+  font-size: 10px;
+  font-style: italic;
+}
+.calculator .error {
+  color: red;
+  text-align: center;
+}
+.calculator .results{
+  padding-top: 20px;
+}
+.calculator .offset{
+  margin-top: 5%;
+}

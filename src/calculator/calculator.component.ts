@@ -5,8 +5,8 @@ import {ChartsModule, Color} from 'ng2-charts';
 
 @Component({
   selector: 'calculator',
-  templateUrl: 'src/caclulator/caclulator.template.html',
-  styleUrls: ['src/caclulator/caclulator.css']
+  templateUrl: 'src/calculator/calculator.template.html',
+  styleUrls: ['src/calculator/calculator.css']
 })
 export class Calculator implements OnInit {
   result: SignResultSet;

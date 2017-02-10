@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import {ChartsModule} from 'ng2-charts';
 
 import {App} from './app.component';
-import {Calculator} from './caclulator/calculator.component';
+import {Calculator} from './calculator/calculator.component';
 
 
 

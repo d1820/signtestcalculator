@@ -1,0 +1,14 @@
+{
+   "name": "signtestcalculator",
+   "version": "1.0.0",
+   "description": "Sign Test Calculator Application.",
+   "scripts": {
+     "lite": "lite-server --port 10001",
+     "start": "npm run lite"
+   },
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+     "lite-server": "2.2.2"
+   }
+}
